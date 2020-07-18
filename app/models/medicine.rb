@@ -5,6 +5,6 @@ class Medicine < ApplicationRecord
   validates :quantity, presence: true
 
   def total
-    value * quantity
+    (value || 0) * (quantity || 0)
   end
 end
